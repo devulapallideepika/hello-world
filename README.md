@@ -27,7 +27,9 @@
 - install java
 - install tomcat
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/3c15f87d-11b2-4607-990a-efabf9cfaab7)
--  In tomcat directory in conf directory add rolenames,username,password
+- now application is accessible on port 8080. but tomcat application doesnt allow to login from browser. changing a default parameter in context.xml , comment () Value ClassName field on files which are under webapp directory. After that restart tomcat services to effect these changes. 
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/ec85a8a4-511e-410a-ade8-74888b283d87)
+-  In tomcat directory in conf directory in tomcat-users.xml file add rolenames,username,password
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/60c5ae31-8e08-466c-b2bc-0d86c281e31a)
 - start the tomcat server
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/1ca5e0a4-c2d5-4f82-8c92-0d36dc736571)
@@ -42,5 +44,23 @@
 - Given path of java, git, maven in jenkins
 - create a job
 - Given git URL and branch
-- In maven clean install
-- In post build actions :
+- Build:
+   - Root POM : pom.xml
+   - Goals and options : clean install
+- In post build actions : 
+   - Deploy war/ear to container
+     - WAR/EAR files : **/*.war
+     - Containers : Tomcat 8.x
+     - Credentials: deployer (user created on above)
+     - Tomcat URL : http://<PUBLIC_IP>:8080
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/a4fefa17-ae4e-4ca6-82d5-6518653ab7fd)
+- save and run the job.
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/0d17f606-5693-4a06-b88a-7ccba21fe971)
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/e7040e81-165e-4158-8463-22ab6aac6de2)
+- webapp is deployed on tomcat server.
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/e331f9b6-6ec6-4d3e-9ed2-98c17ccd2e27)
+- Access the application on browser http://<public_ip>:8080/webapp
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/216eb573-69f0-4595-89d7-064d3a19a09f)
+
+
+
