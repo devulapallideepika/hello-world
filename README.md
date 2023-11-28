@@ -1,4 +1,4 @@
-## Deploying Application on Tomcat server
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/569d4fd6-1d4d-436e-9ab0-0fe880421da0)## Deploying Application on Tomcat server
 ## Jenkins server
 - create ec2 instance 
 - Installing  java it is prerequisite for jenkins
@@ -117,30 +117,108 @@
 - install jenkins
    - prerequisite :
      - Java
+       
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/8616cd81-2994-4fcf-ad46-6b557131af1b)
+
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/a72ea4e8-0b30-4e8d-b6d4-5541c4624351)
+
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/63ddfb46-ea61-4bdb-a306-518e0b419ec6)
+
 - To know the administrator password sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+  
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/a5db80e7-3151-4c50-aea6-53c73bb3eaaf)
+
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/0fe0194c-f645-4b0e-9037-8b981cd0fed3)
+
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/d8829a84-24b9-4f03-9b47-b2ffe21f9591)
+
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/b02082cc-7bdc-401f-9d30-370023fa85a4)
+
 ## Maven installation:
 - Install maven
+  
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/9c77987d-c746-41fb-aa01-2002d6db460e)
+
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/62339eb5-7993-41ee-a344-297d42d3621a)
+
 - Add the java and maven path in bash-profile
+  
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/54ddfeb2-b892-43cb-a0b8-e5841c880834)
+
 ## Docker installation :
 - "sudo apt install docker.io" is the command to install docker
+  
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/cba0c1d6-11aa-4405-accf-b7a68b6b5a37)
+
 - changing the password authentication in sshd_config
+  
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/7e7d9c67-0dcf-4a6d-8ee0-dc9c990bcd31)
+
 - Grant Jenkins user and Ubuntu user permission to docker deamon.
+  
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/1af20229-66b5-4132-85ca-6d8386fb3689)
+
 # In jenkins :
 - install maven integration plugin
+  
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/98e420e6-1477-49f5-a746-e8b94186d3a9)
+
 - install publish over ssh plugin
+  
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/aad6bb68-75c8-4f0c-9974-7d4232b1b2ca)
+
+# integrate jenkins with Docker-host :
+- install publish over ssh
+- SSH Servers :
+     - Hostname : ( docker-host ip)
+     - username : ubuntu
+     - password : xxxxxxxxxxxxx
+# Jenkins job:
+- create a job
+- Given github <URL>
+- given branch
+  
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/dbcf3e54-ae7e-4a1c-bf90-bbf63e4e4e81)
+
+- In Build :
+    - Root pom : pom.xml
+    - goals and options : clean install package
+- In post build :
+     -  Send build artifacts over SSH
+     -  SSH Server Name : docker-host
+     -  Source files    : webapp/target/*.war
+     -  Remove prefix   : webapp/target
+     - Remote directory : //opt/docker
+       
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/f0aae401-2753-41f2-9b24-ccadc961a82d)
+ 
+- save and build the job.
+  
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/6bb75bf2-3238-4dd9-8d03-adc90e9ec8bd)
+
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/9c3ec851-7899-4da5-a77b-aa846e7566a0)
+
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/e7e967b9-4ca4-4854-9b3c-bb27da333021)
+
+- webapp artifact is sended to docker-host through ssh
+- build the docker image
+- Image is created based on Dockerfile
+  
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/fca4e927-997e-478e-a88f-3fadde87e8ef)
+
+- create a container
+  
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/0233ef7e-2235-4c23-872d-2bd1537a1cb7)
+
+- Allow the security inbound rule with port 8081
+- Access the application through browser with http:// <ip address>:port no/webapps
+  
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/b1ff72b1-1280-41ba-bfa7-46a13996003f)
+
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/389e5e96-6143-4a2b-9ad8-a58743b7efcd)
+
+
+
+ 
+   
 
