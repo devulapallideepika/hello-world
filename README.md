@@ -238,6 +238,24 @@
 - maven and java path given in bash-profile
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/721e9dc4-ae11-4967-b862-64abe9217668)
 ## Install Ansible
+- commands to install ansible
+- $ sudo apt update
+- $ sudo apt install software-properties-common
+- $ sudo add-apt-repository --yes --update ppa:ansible/ansible
+- $ sudo apt install ansible
+- create user & passwd
+   - useradd username
+   - passwd  password
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/d6c98085-8a33-445a-b136-4ef6d4f94d5d)
+- Add user in /etc/sudoers file 
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/96587986-7c78-44a7-8381-7f69ab36a73b)
+- Enable password authentication
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/a07d2a98-fc19-4df4-8a1a-6cb3aa8e63cb)
+-    
+## Install Docker
+- command to install docker
+- $ sudo apt install docker.io
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/3ad0b7e7-2beb-4586-ad3d-89421e5be2d1)
 
    
 
