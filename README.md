@@ -1,4 +1,4 @@
-![image](https://github.com/devulapallideepika/hello-world/assets/129947829/569d4fd6-1d4d-436e-9ab0-0fe880421da0)## Deploying Application on Tomcat server
+## Deploying Application on Tomcat server
 ## Jenkins server
 - create ec2 instance 
 - Installing  java it is prerequisite for jenkins
@@ -217,8 +217,27 @@
 
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/389e5e96-6143-4a2b-9ad8-a58743b7efcd)
 
+****************************************************************************************************************************************************************************************
+****************************************************************************************************************************************************************************************
+## DEPLOY ON CONTAINER USING ANSIBLE:
+- Create an ec2 instance
+## Install Jenkins
+- install java
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/2aa3382f-1db8-4516-989d-ba303dd3683b)
+- install jenkins
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/6b31660d-fa39-44fa-b78b-f426e084b039)
+- Access the jenkins on default port 8080
+- allow the security inbound rule 8080
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/0d5b5991-74a6-4c40-8d75-13f5609ad987)
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/72fd5a6f-19c7-43ca-8f56-93b558ca938a)
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/dc4df128-9d52-4b1a-a425-f2697c99a28d)
+- Install necessary plugins along with maven integration and publish over ssh plugins
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/3940a03e-1dcc-4eda-ab44-facfea44478f)
+- Install maven
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/e328141c-a868-4ec7-9d21-5698f7bb768b)
+- maven and java path given in bash-profile
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/721e9dc4-ae11-4967-b862-64abe9217668)
+## Install Ansible
 
-
- 
    
 
