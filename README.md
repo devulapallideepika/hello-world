@@ -251,11 +251,50 @@
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/96587986-7c78-44a7-8381-7f69ab36a73b)
 - Enable password authentication
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/a07d2a98-fc19-4df4-8a1a-6cb3aa8e63cb)
--    
-## Install Docker
+- create public key and private key using "ssh-keygen" command
+- copy the keys using "ssh-copy-id <target server ip>"
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/f1109546-9fae-4b12-b7c8-19d781ae79b3)
+ 
+## Install Docker :
 - command to install docker
 - $ sudo apt install docker.io
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/3ad0b7e7-2beb-4586-ad3d-89421e5be2d1)
+## integrate jenkins and ansible :
+- install publish over ssh plugin
+- Manage Jenkins > Configure System > Publish Over SSH > SSH Servers
+  - SSH Servers : name : ansible-host
+  - Hostname:<ServerIP>
+  - username: ansadmin
+  - Advanced > choose Use password authentication, or use a different key
+  - password: *******
+## Jenkins job :
+- create a job enter new item
+- source code management :
+       - Repository : Git <URL>
+       - Branch     : main
+- Build:
+       - Root POM : pom.xml
+       - Goals and options : clean install package
+- Post-build Actions
+       - Send build artifacts over SSH
+       - SSH Server Name: ansible-server
+       - Transfers > Transfer set
+           - Source files : webapp/target/*.war
+           - Remove prefix: webapp/target
+           - Remote directory: //opt//docker
+- save and run the job
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/b6c5607a-4ba5-49e7-9739-d2c048bb880f)
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/8fcbfb72-a2cb-436d-a77a-56a8c62ad7ee)
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/f2807992-8c59-4de5-88c3-6f2f246ff6a3)
+
+  
+
+
+
+
+
+
+
 
    
 
