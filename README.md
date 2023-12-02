@@ -220,24 +220,42 @@
 ****************************************************************************************************************************************************************************************
 ****************************************************************************************************************************************************************************************
 ## DEPLOY ON CONTAINER USING ANSIBLE:
+
 - Create an ec2 instance
+  
 ## Install Jenkins
+
 - install java
+  
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/2aa3382f-1db8-4516-989d-ba303dd3683b)
+
 - install jenkins
+  
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/6b31660d-fa39-44fa-b78b-f426e084b039)
+
 - Access the jenkins on default port 8080
 - allow the security inbound rule 8080
+  
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/0d5b5991-74a6-4c40-8d75-13f5609ad987)
+
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/72fd5a6f-19c7-43ca-8f56-93b558ca938a)
+
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/dc4df128-9d52-4b1a-a425-f2697c99a28d)
+
 - Install necessary plugins along with maven integration and publish over ssh plugins
+  
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/3940a03e-1dcc-4eda-ab44-facfea44478f)
+
 - Install maven
+  
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/e328141c-a868-4ec7-9d21-5698f7bb768b)
+
 - maven and java path given in bash-profile
+  
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/721e9dc4-ae11-4967-b862-64abe9217668)
+
 ## Install Ansible
+
 - commands to install ansible
 - $ sudo apt update
 - $ sudo apt install software-properties-common
@@ -246,20 +264,30 @@
 - create user & passwd
    - useradd username
    - passwd  password
+     
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/d6c98085-8a33-445a-b136-4ef6d4f94d5d)
-- Add user in /etc/sudoers file 
+
+- Add user in /etc/sudoers file
+  
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/96587986-7c78-44a7-8381-7f69ab36a73b)
+
 - Enable password authentication
+  
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/a07d2a98-fc19-4df4-8a1a-6cb3aa8e63cb)
+
 - create public key and private key using "ssh-keygen" command
 - copy the keys using "ssh-copy-id <target server ip>"
+  
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/f1109546-9fae-4b12-b7c8-19d781ae79b3)
  
 ## Install Docker :
 - command to install docker
 - $ sudo apt install docker.io
+  
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/3ad0b7e7-2beb-4586-ad3d-89421e5be2d1)
+
 ## integrate jenkins and ansible :
+
 - install publish over ssh plugin
 - Manage Jenkins > Configure System > Publish Over SSH > SSH Servers
   - SSH Servers : name : ansible-host
@@ -267,7 +295,9 @@
   - username: ansadmin
   - Advanced > choose Use password authentication, or use a different key
   - password: *******
+    
 ## Jenkins job :
+
 - create a job enter new item
 - source code management :
        - Repository : Git <URL>
@@ -283,11 +313,44 @@
            - Remove prefix: webapp/target
            - Remote directory: //opt//docker
 - save and run the job
+  
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/b6c5607a-4ba5-49e7-9739-d2c048bb880f)
+
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/8fcbfb72-a2cb-436d-a77a-56a8c62ad7ee)
+
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/f2807992-8c59-4de5-88c3-6f2f246ff6a3)
 
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/09ce97d0-928c-4496-a493-aaf4a8030861)
+
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/fcce74bd-1f6f-40c0-82e3-e8bed94b14b0)
+
+- create Dockerfile
   
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/ce24e764-1018-4902-b62d-8acb25b1961b)
+
+- create regapp.yml file to create image
+  
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/ead37c98-bb85-45b8-a2f6-7436b4c27c78)
+
+- create docker image using "ansible-playbook regapp.yml"
+  
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/daf553ff-6d99-41f6-98e6-79aa25cb3f00)
+
+- docker image is pushed to dockerhub
+  
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/9d99e294-864d-4d3f-881e-ea8dc166b988)
+
+- create regnew.yml file to create container
+  
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/5fad5c73-f656-492e-9a53-aaf6db65c75e)
+
+- docker container created using "ansible-playbook regnew.yml"
+  
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/77743a31-e7fe-4197-944d-e627768ba8c8)
+
+- Access the application using <ip address>:port no/webapp
+   
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/ce64be3b-e412-46c6-bd8d-7f48ea2d2096)
 
 
 
