@@ -275,8 +275,12 @@
   
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/a07d2a98-fc19-4df4-8a1a-6cb3aa8e63cb)
 
+- given ip address in ansible config file
+  
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/2a7a45cd-b875-4def-ab88-f4f364d4a872)
+
 - create public key and private key using "ssh-keygen" command
-- copy the keys using "ssh-copy-id <target server ip>"
+- copy the keys using "ssh-copy-id <ip address>"
   
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/f1109546-9fae-4b12-b7c8-19d781ae79b3)
  
@@ -306,12 +310,12 @@
        - Root POM : pom.xml
        - Goals and options : clean install package
 - Post-build Actions
-       - Send build artifacts over SSH
-       - SSH Server Name: ansible-server
-       - Transfers > Transfer set
-           - Source files : webapp/target/*.war
-           - Remove prefix: webapp/target
-           - Remote directory: //opt//docker
+       -  Send build artifacts over SSH
+       -  SSH Server Name: ansible-server
+       -  Transfers > Transfer set
+              -  Source files : webapp/target/*.war
+              -  Remove prefix: webapp/target
+              -  Remote directory: //opt//docker
 - save and run the job
   
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/b6c5607a-4ba5-49e7-9739-d2c048bb880f)
@@ -351,6 +355,127 @@
 - Access the application using <ip address>:port no/webapp
    
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/ce64be3b-e412-46c6-bd8d-7f48ea2d2096)
+
+**********************************************************************************************************************************************************************************
+**********************************************************************************************************************************************************************************
+
+## DEPLOY ON KUBERNETES USING ANSIBLE :
+## Kubernetes set up using eksctl
+
+- create ec2 instance
+- Add the Iam role to instance with permissions
+  
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/df802b58-8553-4a8b-96d1-aedb1847f759)
+
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/07559efb-ecc7-4a72-bbe0-c0a4396861b0)
+
+- install aws cli
+  
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/89f02583-d0f9-4e32-b5ba-648f7eb566da)
+
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/fc8a0049-18c4-401e-b461-ebbd1a681ea1)
+
+- install kubectl
+  
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/256e5d32-8483-4910-adf3-d8222f98d1ac)
+
+- install eksctl
+  
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/635501a5-6da7-4d64-8785-2e1034cc71f7)
+
+- create cluster
+  
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/c02256a6-d33e-4447-ac11-e00ba4c1b00e)
+
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/62726736-12a1-4601-8bee-68b33c737706)
+  
+
+## Install Ansible
+
+- commands to install ansible
+- $ sudo apt update
+- $ sudo apt install software-properties-common
+- $ sudo add-apt-repository --yes --update ppa:ansible/ansible
+- $ sudo apt install ansible
+- create user & passwd
+   - useradd username
+   - passwd  password
+     
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/d6c98085-8a33-445a-b136-4ef6d4f94d5d)
+
+- Add user in /etc/sudoers file
+  
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/96587986-7c78-44a7-8381-7f69ab36a73b)
+
+- Enable password authentication
+  
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/a07d2a98-fc19-4df4-8a1a-6cb3aa8e63cb)
+
+- given ip address in ansible config file
+  
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/07ed0e5f-ff8f-4d73-93b8-657f2b221e13)
+  
+- create public key and private key using "ssh-keygen" command
+- copy the keys using "ssh-copy-id <ip address>"
+  
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/f1109546-9fae-4b12-b7c8-19d781ae79b3)
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+   
+
 
 
 
