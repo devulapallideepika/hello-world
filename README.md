@@ -356,8 +356,8 @@
    
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/ce64be3b-e412-46c6-bd8d-7f48ea2d2096)
 
-**********************************************************************************************************************************************************************************
-**********************************************************************************************************************************************************************************
+*************************************************************************************************************************************************
+*************************************************************************************************************************************************
 
 ## DEPLOY ON KUBERNETES USING ANSIBLE :
 ## Kubernetes set up using eksctl
@@ -388,7 +388,15 @@
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/c02256a6-d33e-4447-ac11-e00ba4c1b00e)
 
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/62726736-12a1-4601-8bee-68b33c737706)
+
+- create deployment.yml
   
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/f63f2fa5-d2c7-483d-8228-e2dc70cbf793)
+
+- create service.yml
+  
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/28715e83-e48b-4178-b62f-cd83fcce1332)
+
 
 ## Install Ansible
 
@@ -401,12 +409,8 @@
    - useradd username
    - passwd  password
      
-![image](https://github.com/devulapallideepika/hello-world/assets/129947829/d6c98085-8a33-445a-b136-4ef6d4f94d5d)
-
 - Add user in /etc/sudoers file
   
-![image](https://github.com/devulapallideepika/hello-world/assets/129947829/96587986-7c78-44a7-8381-7f69ab36a73b)
-
 - Enable password authentication
   
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/a07d2a98-fc19-4df4-8a1a-6cb3aa8e63cb)
@@ -416,10 +420,26 @@
 ![image](https://github.com/devulapallideepika/hello-world/assets/129947829/07ed0e5f-ff8f-4d73-93b8-657f2b221e13)
   
 - create public key and private key using "ssh-keygen" command
-- copy the keys using "ssh-copy-id <ip address>"
+- copy the keys using "ssh-copy-id ip address
   
-![image](https://github.com/devulapallideepika/hello-world/assets/129947829/f1109546-9fae-4b12-b7c8-19d781ae79b3)
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/17ddf158-fb99-43af-aab8-0ed9e3a94918)
+  
+- create regkube.yml file to create service and deployment
+  
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/5c631372-ad2f-42e9-aed0-70677f6a4761)
+
+- deployment, services are created using "ansible-playbook regkube.yml" command
+  
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/9290f49d-8756-49ea-a811-ec3a4f48865a)
+
+
+- deployment & service created in eksctl
+  
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/b95a01b8-355a-4918-88f6-f9339c51ba6d)
  
+- Access the application on browser using loadbalancer
+
+![image](https://github.com/devulapallideepika/hello-world/assets/129947829/8b6ab241-bcd8-4a15-b2ca-31cb3bc9a59f)
 
 
 
